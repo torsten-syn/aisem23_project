@@ -50,9 +50,9 @@ All the implementations are few lines of code performing iterations over the lis
 
 1. On your local machine, create virtual environment for the project and activate it:
 
-   `conda create ...`
+   `conda create -n <ENV_NAME> python=3.9`
 
-   `conda activate ...`
+   `conda activate <ENV_NAME>`
 
 2. Go to the cloned project directory and install required packages:
 
