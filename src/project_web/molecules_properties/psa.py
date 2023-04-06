@@ -1,5 +1,4 @@
 import numpy as np
-from scipy import  stats
 
 from dash import dcc
 import plotly.graph_objs as go
@@ -22,12 +21,9 @@ def get_data(raw_data: list) -> dict:
                 - component (str): name of the component
                 - data (list): array of integers, actual values
                 - mean (float): average value
-                - median (float): median
                 - std (float): standard deviation
                 - min_value (float): minimum value
                 - max_value (float): maximum value
-                - irq (float): interquartile range (stats.iqr(data))
-                - quartiles (list): 0.25th, 0.5th and 0.75th quantiles (np.quantile(data, [0.25, 0.5, 0.75]))
     """
     return {}
     

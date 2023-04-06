@@ -22,23 +22,17 @@ def get_data(raw_data: list) -> dict:
                 - component (str): name of the component
                 - data (list): array of integers, actual values
                 - mean (float): average value
-                - median (float): median
                 - std (float): standard deviation
                 - min_value (float): minimum value
                 - max_value (float): maximum value
-                - irq (float): interquartile range (stats.iqr(data))
-                - quartiles (list): 0.25th, 0.5th and 0.75th quantiles (np.quantile(data, [0.25, 0.5, 0.75]))
     """
     heavy_atoms_values = [int(d["molecule_properties"]["heavy_atoms"]) for d in raw_data if d["molecule_properties"]["heavy_atoms"]]
     return dict(component="Number of heavy atoms",
                 data=heavy_atoms_values,
                 mean=np.mean(heavy_atoms_values),
-                median=np.median(heavy_atoms_values),
                 std=np.std(heavy_atoms_values),
                 max_value=np.max(heavy_atoms_values),
-                min_value=np.min(heavy_atoms_values),
-                quartiles=np.quantile(heavy_atoms_values, [0.25, 0.5, 0.75]),
-                irq=stats.iqr(heavy_atoms_values)
+                min_value=np.min(heavy_atoms_values)
                 )
     
 def draw_component(data_array: list) -> dcc.Graph:
