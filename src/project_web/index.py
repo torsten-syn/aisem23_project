@@ -1,3 +1,4 @@
+import sys
 import dash
 from dash.dependencies import Input, Output, State
 import flask
@@ -20,9 +21,13 @@ from project_web.utils import get_property_ranges
 #     "https://fonts.googleapis.com/css2"
 # ]
 
+# cli = sys.modules['flask.cli']
+# run_message = "To see the results go to your browser, type localhost:8053 in the address line and run a search for SMILES.\
+#                If everything runs correct, you will see the histogram appearing in the results."
+# cli.show_server_banner = lambda *x: cli.echo(run_message)
+
 server = flask.Flask(__name__)
 app = dash.Dash(__name__, assets_folder="assets/", server=server)
-
 
 app.css.config.serve_locally = True
 app.scripts.config.serve_locally = True

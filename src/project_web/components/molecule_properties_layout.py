@@ -143,12 +143,9 @@ def mol_props_component(data):
         if component_data:
             table_data.append(dict(property_name=component_data["component"],
                                 average=round(component_data["mean"], 3),
-                                median=round(component_data["median"], 3),
                                 std=round(component_data["std"], 3),
                                 maximum=round(component_data["max_value"], 3),
                                 minimum=round(component_data["min_value"], 3),
-                                IRQ=round(component_data["irq"], 3),
-                                quartiles=", ".join([str(round(q, 3)) for q in component_data["quartiles"]]),
                                 ))
         if c % 2 != 0:
             div_output.append(html.Div(div_data,

@@ -6,13 +6,15 @@ from dash import html, dcc
 smiles_input = html.Div([html.Div(html.H3("Input SMILES",
                                  className="row")),
                          html.Div([dcc.Input(id="smiles-input",
+                                             value="COC(=O)c1ccc(CBr)cc1",
                                              placeholder="e.g. n1ccccc1",
                                              className="five columns"),
                                    html.Div([html.Label("Similarity %",
                                                         className="two columns",
                                                         ),
                                             dcc.Input(id="smiles-sim-input",
-                                                      placeholder="80",
+                                                      placeholder="50",
+                                                      value=50,
                                                       type="number",
                                                       min=0.1,
                                                       max=100,
@@ -24,7 +26,9 @@ smiles_input = html.Div([html.Div(html.H3("Input SMILES",
                                                id="smiles-search-btn",
                                                className="button-primary")],
                                    className="row"),
-                         html.Div(dcc.Store(id="chembl-results"))
+                         dcc.Loading(html.Div(dcc.Store(id="chembl-results")),
+                                     color="#cd0039",
+                                     type="dot")
                          ],
                         className="row")
 

@@ -1,5 +1,4 @@
 import numpy as np
-from scipy import  stats
 
 from dash import dcc
 import plotly.graph_objs as go

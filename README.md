@@ -34,6 +34,18 @@ If you feel confident, you also can customize the plots as you like them, for ex
 **Important:** You don't need any experience with web app development or any knowledge of REST API and Plotly Dash to succeed with this task. 
 All the implementations are few lines of code performing iterations over the list with molecules data.
 
+## Project directory
+
+The source code for the app is located in `src/` folder.
+File `app.py` is analoguos to `main.py` and running it starts the server. 
+All the web layouts and callback logics are located at `src/project_web`.
+
+ - `src/project_web/assets` - CSS files, images and other auxiliary files
+ - `src/project_web/chembl_search` - functionality performing API calls to ChEMBL DB
+ - `src/project_web/components` - HTML components for core layout, molecules properties, molecules_strucures and results table visualization
+ - `src/project_web/molecule_properties` - functionality that extracts molecules properties from raw data
+ - `src/project_web/molecule_structures` - functionality that extracts molecule structures.
+
 ## Preparation for the project
 
 1. Form a team of ~8-10 people and choose a person who will be a "Project Leader". This person will be maintaining the repository with the code, do informal "code review" and merge all the created branches with changes at the end.
