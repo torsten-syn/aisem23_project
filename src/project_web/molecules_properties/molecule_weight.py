@@ -25,7 +25,14 @@ def get_data(raw_data: list) -> dict:
                 - min_value (float): minimum value
                 - max_value (float): maximum value
     """
-    return {}
+    heavy_atoms_values = [int(d["molecule_properties"]["heavy_atoms"]) for d in raw_data if d["molecule_properties"]["heavy_atoms"]]
+    return dict(component="Number of heavy atoms",
+                data=heavy_atoms_values,
+                mean=np.mean(heavy_atoms_values),
+                std=np.std(heavy_atoms_values),
+                max_value=np.max(heavy_atoms_values),
+                min_value=np.min(heavy_atoms_values)
+                )     
     
 def draw_component(data_array: list) -> dcc.Graph:
     """[OPTIONAL]
